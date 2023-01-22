@@ -39,6 +39,13 @@ class PaymentsRepository extends ServiceEntityRepository
         }
     }
 
+    public function getAllPaymentsAssoc(): array
+    {
+        return $this->createQueryBuilder('p') 
+            ->getQuery()
+            ->getArrayResult();
+    }
+
 //    /**
 //     * @return Payments[] Returns an array of Payments objects
 //     */
